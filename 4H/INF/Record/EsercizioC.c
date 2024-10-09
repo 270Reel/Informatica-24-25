@@ -4,7 +4,7 @@
 
 #define DIM_COGN 20
 #define NUM_VOTI 4
-#define NUM_STUD 3
+#define NUM_STUD 1
 
 typedef struct data {
     int giorno;
@@ -24,13 +24,14 @@ void stampaTab(Studente t[]); //Stampa la tabella di studenti
 int ricercaCogn(Studente t[], char cog[]); //Cerca uno studente per cognome
 int stampaMedia(Studente t[]); //Stampa la media voti per ogni studente e conta quante medie sono ≥ 6.
 int studenti10(Studente t[]); //Conta gli studenti con almeno un voto pari a 10
+void formattaCogn(Studente t[]); //Riscrive correttamente i cognomi con la prima lettera maiuscola e le altre minuscole
 
 int main() {
 
     Studente studente[NUM_STUD];
 
     caricaTab(studente);
-
+    formattaCogn(studente);
     stampaTab(studente);
 
 
@@ -51,11 +52,16 @@ int main() {
 
     int stud10 = studenti10(studente);
     printf("\n+---------------------------------------------------------+\n");
-    if(stud10 > 1) {
+
+    if(stud10 == 1) {
+        printf("solo uno studente ha almeno un voto pari a 10\n");
+    } else if(stud10 > 1) {
         printf("%d alunni hanno almeno un voto pari a 10\n", stud10);
-    }else{
-        printf("%d solo studente ha almeno un voto pari a 10\n");
+    } else {
+        printf("Nessuno studente ha un voto pari a 10\n");
     }
+    
+
     
 }
 
@@ -124,4 +130,17 @@ int studenti10(Studente t[]) {
         }
     }
     return cont;
+}
+
+void formattaCogn(Studente t[]) {
+    for(int i = 0; i < NUM_STUD; i++) {
+        if(t[i].cognome[0] >= 'a' && t[i].cognome[0] <= 'z') {
+            t[i].cognome[0] -= 32;
+        }
+        for(int j = 1; t[i].cognome[j] != '\0'; j++) {
+            if(t[i].cognome[j] >= 'A' && t[i].cognome[j] <= 'Z') {
+                t[i].cognome[j] += 32;  
+            }
+        }
+    }
 }
