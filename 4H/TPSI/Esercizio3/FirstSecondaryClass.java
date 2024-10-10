@@ -1,5 +1,3 @@
-package mypackage;
-
 import java.util.GregorianCalendar;
 import java.util.Calendar;
 
