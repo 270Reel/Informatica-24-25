@@ -3,20 +3,27 @@
 int main() {
 
     FILE* testo;
-    
+    char ch;
+
+    //Apriamo il file e controlliamo la corretta apertura
     testo = fopen("test.txt", "r");
-
-    char contenuto[1000];
-
-    fgets(contenuto, 1000, testo);
-    printf("%s", contenuto);
-
-    if(testo != 0) {
+    if(testo != NULL) {
         printf("Apertura del file andata a buon fine!\n");
-    }else {
-        printf("Apertura del file non andata a buon fine :(\n");
+    } else {
+        printf("Apertura del file non andata a buon fine :( \n");
+        return 1;
     }
 
-    return 0;
+    //Leggiamo e stampiamo tutti i caratteri
+    //presenti nel file
+    while(!feof(testo)) {
+        ch = fgetc(testo);
+        if(ch != EOF) {
+            printf("%c", ch);
+        }
+    }
+    
 
+    fclose(testo);
+    return 0;
 }
