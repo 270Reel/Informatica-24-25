@@ -21,13 +21,6 @@ int main() {
         return 1;
     }
 
-    
-    /*while(fgetc(testoIN) !=  EOF) {
-        ch = fgetc(testoIN)
-        fputc(ch, testoOUT);
-    }*/
-
-
     // Copia il contenuto carattere per carattere
     while((ch = fgetc(testoIN)) != EOF) {
         fputc(ch, testoOUT);
@@ -37,7 +30,7 @@ int main() {
     fclose(testoIN);
     fclose(testoOUT);
 
-    // Facoltativo: rileggi il file di output per stamparlo a schermo
+    //Rilegge il file di output per stamparlo a schermo
     testoOUT = fopen("OUT.txt", "r");
     if(testoOUT == NULL) {
         printf("Errore nell'apertura del file OUT.txt per la lettura\n");
