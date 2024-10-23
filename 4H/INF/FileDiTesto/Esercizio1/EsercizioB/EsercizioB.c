@@ -13,7 +13,7 @@ int main() {
         return 1;
     }
 
-    // Apri (o crea) il file nomi2.TXT in modalità scrittura
+    // Apri il file nomi2.TXT in modalità scrittura
     nomi2Txt = fopen("nomi2.txt", "w");
     if (nomi2Txt == NULL) {
         printf("Errore nell'apertura del file nomi2.TXT.\n");
