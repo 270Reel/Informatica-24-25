@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int main() {
+
     FILE *file;
     char ch;
     int numCaratteri = 0, numParole = 0, numRighe = 0;
@@ -15,17 +16,17 @@ int main() {
 
     while ((ch = fgetc(file)) != EOF) {
 
-        // Conto i caratteri non spazio, tab o newline
+        // Conto i caratteri non spazio, tab o righe
         if (ch != ' ' && ch != '\t' && ch != '\n') {
             numCaratteri++;
         }
 
-        // Conto le righe
+        //Condidizione per contare le righe
         if (ch == '\n') {
             numRighe++;
         }
 
-        // Conto le parole
+        //Condidizione per contare le parole
         if (ch != ' ' && ch != '\t' && ch != '\n' && statoParola == 0) {
             statoParola = 1;  // Siamo entrati in una parola
             numParole++;
@@ -35,7 +36,7 @@ int main() {
     }
 
     // Considera l'ultima riga se non finisce con un '\n'
-    if (ch != '\n' && numCaratteri > 0) {
+    if (ch != '\n' && numCaratteri != 0) {
         numRighe++;
     }
 
