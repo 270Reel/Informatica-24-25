@@ -10,7 +10,7 @@ typedef struct data {
     int giorno;
     int mese;
     int anno;
-} data;
+}data;
 
 typedef struct Studente {
     char nome[30];
@@ -25,7 +25,7 @@ int ricercaCogn(Studente t[], char cog[]); //Cerca uno studente per cognome
 int stampaMedia(Studente t[]); //Stampa la media voti per ogni studente e conta quante medie sono ≥ 6.
 int studenti10(Studente t[]); //Conta gli studenti con almeno un voto pari a 10
 void formattaCogn(Studente t[]); //Riscrive correttamente i cognomi con la prima lettera maiuscola e le altre minuscole
-
+int trovaVotoMaggiore(Studente t[]);
 int main() {
 
     Studente studente[NUM_STUD];
@@ -143,4 +143,17 @@ void formattaCogn(Studente t[]) {
             }
         }
     }
+}
+
+int trovaVotoMaggiore(Studente t[]){
+    int max=0, pos=0;
+    for(int i=0; i<NUM_STUD; i++) {
+        for(int j=0; j<NUM_VOTI; j++) {
+            if(t[i].voti[j] > max) {
+                max = t[i].voti;
+                pos = i;
+                }
+            }
+        }
+        return pos;
 }
