@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define NUM_STUD 1
+#define NUM_STUD 10
 #define NUM_VOTI 5
 
 typedef struct profiloStudente {
