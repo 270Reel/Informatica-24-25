@@ -50,7 +50,7 @@ void Carica(Studente buffer[], FILE *fileptr) {
 }
 
 void Stampa(Studente buffer[], FILE *fileptr) {
-    while (fread(buffer, sizeof(Studente), NUM_STUD, fileptr) == NUM_STUD) {
+    fread(buffer, sizeof(Studente), NUM_STUD, fileptr);
         for (int i = 0; i < NUM_STUD; i++) {
             printf("\n+---------------------------------------------------------+\n");
             printf(" Nome e cognome :     %s %s                               \n", buffer[i].nome, buffer[i].cognome);
@@ -60,5 +60,4 @@ void Stampa(Studente buffer[], FILE *fileptr) {
             }
             printf("\n+---------------------------------------------------------+\n");
         }
-    }
 }
