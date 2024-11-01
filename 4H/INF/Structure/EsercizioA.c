@@ -31,35 +31,26 @@ int main() {
     struct Persona p;
 
     //Chiedo all'utente di inserire i dati
-    printf("Inserisci il nome della persona:     ");
-    scanf("%s", p.nome);
+    printf("Inserisci nome e cognome della persona:     ");
+    scanf("%s %s", p.nome, p.cognome);
 
-    printf("Inserisci il cognome della persona:  ");
-    scanf("%s", p.cognome);
-
-    printf("Inserisci la via:                    ");
+    printf("Inserisci la via:                           ");
     scanf("%s", p.indirizzo.via);    
 
-    printf("Inserisci la citta':                 ");
+    printf("Inserisci la citta':                        ");
     scanf("%s", p.indirizzo.citta);
 
-    printf("Inserisci la provincia:              ");
+    printf("Inserisci la provincia:                     ");
     scanf("%s", p.indirizzo.provincia);
     
-    printf("Inserisci il giorno di nascita:      ");
-    scanf("%d", &p.dataDiNascita.giorno);
-
-    printf("Inserisci il mese di nascita:        ");
-    scanf("%d", &p.dataDiNascita.mese);
+    printf("Inserisci la data di nascita (gg/mm/aa):    ");
+    scanf("%d/%d/%d", &p.dataDiNascita.giorno, &p.dataDiNascita.mese, &p.dataDiNascita.anno);
     
-    printf("Inserisci l'anno di nascita:         ");
-    scanf("%d", &p.dataDiNascita.anno);
-    printf("\n");
-
     //Stampo i dati inseriti
-    printf("Nome e cognome della persona inserita:   %s %s\n", p.nome, p.cognome);
-    printf("Indirizzo della persona inserita:        %s - Citta': %s - Provincia(%s)\n", p.indirizzo.via, p.indirizzo.citta, p.indirizzo.provincia);
-    printf("Data di nascita della persona inserita:  %d/%d/%d\n", p.dataDiNascita.giorno, p.dataDiNascita.mese, p.dataDiNascita.anno);
+    printf("\n");
+    printf("Nome e cognome della persona inserita:      %s %s\n", p.nome, p.cognome);
+    printf("Indirizzo della persona inserita:           %s - Citta': %s - Provincia(%s)\n", p.indirizzo.via, p.indirizzo.citta, p.indirizzo.provincia);
+    printf("Data di nascita della persona inserita:     %d/%d/%d\n", p.dataDiNascita.giorno, p.dataDiNascita.mese, p.dataDiNascita.anno);
 
     return 0;
 }
