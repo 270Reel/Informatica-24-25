@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define NUM_STUD 10
+#define NUM_STUD 2
 #define NUM_VOTI 5
 
-typedef struct profiloStudente {
+typedef struct {
     char nome[20];
     char cognome[20];
     int voti[NUM_VOTI];
@@ -54,7 +54,7 @@ void Stampa(Studente buffer[], FILE *fileptr) {
         for (int i = 0; i < NUM_STUD; i++) {
             printf("\n+---------------------------------------------------------+\n");
             printf(" Nome e cognome :     %s %s                               \n", buffer[i].nome, buffer[i].cognome);
-            printf(" Voti dell'alunno:   ");
+            printf(" Voti dell'alunno:    ");
             for (int j = 0; j < NUM_VOTI; j++) {
                 printf("%d ", buffer[i].voti[j]);
             }
