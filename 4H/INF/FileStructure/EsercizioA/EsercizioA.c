@@ -20,15 +20,15 @@ void StampaInformazioni(FILE *fileptr);
 int main() {
     srand(time(NULL));
     
-    FILE *fileptr = fopen("Studenti.txt", "wb");
+    FILE *fileptr = fopen("Studenti.dat", "wb");
     Carica(fileptr);
     fclose(fileptr);
 
-    fileptr = fopen("Studenti.txt", "rb");
+    fileptr = fopen("Studenti.dat", "rb");
     Stampa(fileptr);
     fclose(fileptr);
 
-    fileptr = fopen("Studenti.txt", "rb");
+    fileptr = fopen("Studenti.dat", "rb");
     char cogn[20];
     printf("Inserisci il cognome da cercare: ");
     scanf("%s", cogn);
@@ -41,7 +41,7 @@ int main() {
     }
     fclose(fileptr);
 
-    fileptr = fopen("Studenti.txt", "rb");
+    fileptr = fopen("Studenti.dat", "rb");
     StampaInformazioni(fileptr);
     fclose(fileptr);
 

@@ -19,16 +19,20 @@ void CorreggiVoto(FILE *fileptr);
 int main() {
     srand(time(NULL));
     
-    FILE *fileptr = fopen("Studenti.txt", "wb");
+    FILE *fileptr = fopen("Studenti.dat", "wb");
     Carica(fileptr);
     fclose(fileptr);
 
-    fileptr = ("Studenti.txt", "rb");
+    fileptr = fopen("Studenti.dat", "rb");
     Stampa(fileptr);
     fclose(fileptr);
 
-    fileptr = ("Studenti.txt", "w+");
+    fileptr = fopen("Studenti.dat", "r+b");
     CorreggiVoto(fileptr);
+    fclose(fileptr);
+
+    fileptr = fopen("Studenti.dat", "rb");
+    Stampa(fileptr);
     fclose(fileptr);
 
     return 0;
@@ -65,12 +69,16 @@ void Stampa(FILE *fileptr) {
 }
 
 void CorreggiVoto(FILE *fileptr) {
+
     Studente buffer;
+
     while (fread(&buffer, sizeof(Studente), 1, fileptr) == 1) {
         for(int i=0; i<NUM_VOTI; i++) {
             if(buffer.voti[i] < 4) {
-                fseek()
+                buffer.voti[i] = 4;
             }
         }
+        fseek(fileptr,-sizeof(Studente),SEEK_CUR);
+        fwrite(&buffer, sizeof(Studente), 1, fileptr);
     }
 }
