@@ -12,16 +12,29 @@ typedef struct {
     int voti[NUM_VOTI];
 } Studente;
 
-void Carica(FILE *fileptr);
+void Carica(Studente buffer[]; FILE *fileptr);
 void Stampa(FILE *fileptr);
 
 int main() {
-
+    srand(time(NULL));
     Studente buffer[NUM_STUD];
     FILE* fileptr = fopen("testo.txt", "wb"); 
-    srand(time(NULL));
+    Carica(buffer, fileptr);
 
-    for(int i=0; i<N; i++){
-        Carica(buffer);
+}
+
+void Carica(Studente buffer[], FILE *fileptr) {
+    for(int i=0; i<NUM_STUD; i++) {
+        for(int j=0; j<NUM_VOTI; j++){
+            buffer[i].voti[j] = rand() % 11;
+        }
+        fwrite(&buffer, sizeof(Studente), 1, fileptr);
     }
+
+}
+
+void Stampa(FILE *fileptr) {
+    Studente
+    fseek(fileptr,1,SEEK_SET);
+    while(fread(&buffer, sizeof(Studente))==!)
 }
