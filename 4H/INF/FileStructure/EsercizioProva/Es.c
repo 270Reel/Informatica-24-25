@@ -22,6 +22,6 @@ int main() {
     srand(time(NULL));
 
     for(int i=0; i<N; i++){
-        Carica(buffer[i]);
+        Carica(buffer);
     }
 }
