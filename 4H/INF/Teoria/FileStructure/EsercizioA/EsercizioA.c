@@ -28,7 +28,7 @@ int main() {
     Stampa(fileptr);
     fclose(fileptr);
 
-    fileptr = fopen("Studenti.dat", "rb");
+    /*fileptr = fopen("Studenti.dat", "rb");
     char cogn[20];
     printf("Inserisci il cognome da cercare: ");
     scanf("%s", cogn);
@@ -43,7 +43,7 @@ int main() {
 
     fileptr = fopen("Studenti.dat", "rb");
     StampaInformazioni(fileptr);
-    fclose(fileptr);
+    fclose(fileptr);*/
 
     return 0;
 }
