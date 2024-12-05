@@ -66,7 +66,11 @@ int main() {
     r2.setBase(y);
 
     cout<<"[VALORI DEL PRIMO RETTANGOLO]"<<endl;
+    cout<<"-------------------------------------"<<endl;
     r1.stampa();
+    cout<<endl;
     cout<<"[VALORI DEL SECONDO RETTANGOLO]"<<endl;
+    cout<<"-------------------------------------"<<endl;
     r2.stampa();
 }
+
