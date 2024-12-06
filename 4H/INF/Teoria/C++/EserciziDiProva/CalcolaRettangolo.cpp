@@ -1,15 +1,13 @@
 #include <iostream>
 
-    double setAltezza(double x);
-    double setBase(double y);
-    double Perimetro();
-    double Area();
-    void stampa();
-
 using namespace std;
 
-
 class Rettangolo {
+    
+    Rettangolo(double altezza, double base){
+        this->altezza = altezza;
+        this->base = base;
+    }
 
     private:
     double altezza;
@@ -45,7 +43,6 @@ class Rettangolo {
 int main() {
 
     Rettangolo r1;
-    Rettangolo r2;
 
     double x, y;
 
@@ -57,20 +54,8 @@ int main() {
     cin>>y;
     r1.setBase(y);
 
-    cout<<"Inserisci l'altezza del secondo rettangolo"<<endl;
-    cin>>x;
-    r2.setAltezza(x);
-
-    cout<<"Inserisci la base del secondo rettangolo"<<endl;
-    cin>>y;
-    r2.setBase(y);
-
     cout<<"[VALORI DEL PRIMO RETTANGOLO]"<<endl;
     cout<<"-------------------------------------"<<endl;
     r1.stampa();
-    cout<<endl;
-    cout<<"[VALORI DEL SECONDO RETTANGOLO]"<<endl;
-    cout<<"-------------------------------------"<<endl;
-    r2.stampa();
 }
 
