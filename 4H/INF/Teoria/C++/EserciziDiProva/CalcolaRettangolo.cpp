@@ -4,23 +4,16 @@ using namespace std;
 
 class Rettangolo {
     
-    Rettangolo(double altezza, double base){
-        this->altezza = altezza;
-        this->base = base;
-    }
-
     private:
+
     double altezza;
     double base;
 
     public:
 
-    void setAltezza(double x) {
-        altezza = x;
-    }
-
-    void setBase(double y) {
-        base = y;
+        Rettangolo(double altezza, double base){
+        this->altezza = altezza;
+        this->base = base;
     }
 
     double Perimetro() {
@@ -42,17 +35,9 @@ class Rettangolo {
 
 int main() {
 
-    Rettangolo r1;
+    Rettangolo r1(4.9, 6.7);
 
     double x, y;
-
-    cout<<"Inserisci l'altezza del rettangolo"<<endl;
-    cin>>x;
-    r1.setAltezza(x);
-
-    cout<<"Inserisci la base del rettangolo"<<endl;
-    cin>>y;
-    r1.setBase(y);
 
     cout<<"[VALORI DEL PRIMO RETTANGOLO]"<<endl;
     cout<<"-------------------------------------"<<endl;
