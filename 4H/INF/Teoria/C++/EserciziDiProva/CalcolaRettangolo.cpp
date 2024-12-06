@@ -35,9 +35,16 @@ class Rettangolo {
 
 int main() {
 
-    Rettangolo r1(4.9, 6.7);
+    double base, altezza;
+    
+    cout<<"Inserisci il valore dell'altezza"<<endl;
+    cin>>altezza;
 
-    double x, y;
+    cout<<"Inserisci il valore della base"<<endl;
+    cin>>base;
+
+    Rettangolo r1(altezza, base);
+
 
     cout<<"[VALORI DEL PRIMO RETTANGOLO]"<<endl;
     cout<<"-------------------------------------"<<endl;
