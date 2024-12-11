@@ -43,9 +43,9 @@ class LED {
     void test(int numeroTest) {
       for (int i = 0; i < numeroTest; i++) {
 
-        delay(4000);
+        accendi(); delay(2000); spegni(); delay(2000);
 
-        inverti(); delay(2000) inverti();
+        inverti(); delay(2000); inverti();
 
         lampeggio();
 
@@ -63,5 +63,4 @@ void setup() {
 void loop() {
   led.test(1); // Esegui il test con 3 inversioni
   delay(10000);
-  led.test(1);
 }

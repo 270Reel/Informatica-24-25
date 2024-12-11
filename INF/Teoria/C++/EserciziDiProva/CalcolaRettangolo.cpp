@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -24,12 +25,17 @@ class Rettangolo {
         return base * altezza;
     }
 
+    double Diagonale() {
+        return sqrt((base*base) + (altezza*altezza));
+    }
+
     void stampa() {
 
         cout<<"Il valore dell'altezza e' "<<altezza<<endl;
         cout<<"Il valore della base e' "<<base<<endl;
         cout<<"Il valore delle perimetro e' "<<Perimetro()<<endl;
         cout<<"Il valore dell'area e' "<<Area()<<endl;
+        cout<<"Il valore della diagonale"<<Diagonale()<<endl;
     }
 };
 
