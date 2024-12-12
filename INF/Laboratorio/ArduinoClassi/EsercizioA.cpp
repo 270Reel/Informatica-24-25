@@ -47,7 +47,7 @@ class LED {
 
         inverti(); delay(2000); inverti();
 
-        lampeggio();
+        lampeggio(1);
 
       }
     }
