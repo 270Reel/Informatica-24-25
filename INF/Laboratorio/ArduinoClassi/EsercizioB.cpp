@@ -35,11 +35,10 @@ class SWITCH {
 
         bool press() {
             if (digitalRead(pin) == LOW) {
-                stato = true;
+                return true;
             } else {
-                stato = false;
+                return false;
             }
-            return stato;
         }
 };
 
