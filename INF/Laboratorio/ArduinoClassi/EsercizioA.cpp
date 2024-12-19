@@ -40,27 +40,27 @@ class LED {
       }
     }
 
-    void test(int numeroTest) {
-      for (int i = 0; i < numeroTest; i++) {
+    void test1(int numeroTest) {
+        lampeggio(numeroTest);
+      }
 
-        accendi(); delay(2000); spegni(); delay(2000);
-
-        inverti(); delay(2000); inverti();
-
-        lampeggio(1);
-
+    void test2(int numeroTest) {
+      for(int i=0; i<numeroTest; i++){
+        inverti();
+        delay(2000);
       }
     }
-};  // Aggiungi il punto e virgola qui per terminare la dichiarazione della classe
+};
 
 // Crea un oggetto LED sulla porta 11
 LED led(11);
 
 void setup() {
-  // Oggetto LED già inizializzato nel costruttore
+  led.test1(3);
+  delay(6000);
+  led.test2(3);
 }
 
 void loop() {
-  led.test(1); // Esegui il test con 3 inversioni
-  delay(10000);
+
 }
