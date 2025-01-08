@@ -35,7 +35,7 @@ class Rettangolo {
         cout<<"Il valore della base e' "<<base<<endl;
         cout<<"Il valore delle perimetro e' "<<Perimetro()<<endl;
         cout<<"Il valore dell'area e' "<<Area()<<endl;
-        cout<<"Il valore della diagonale"<<Diagonale()<<endl;
+        cout<<"Il valore della diagonale "<<Diagonale()<<endl;
     }
 };
 
@@ -51,9 +51,8 @@ int main() {
 
     Rettangolo r1(altezza, base);
 
-
     cout<<"[VALORI DEL PRIMO RETTANGOLO]"<<endl;
-    cout<<"-------------------------------------"<<endl;
+    cout<<"-----------------------------"<<endl;
     r1.stampa();
 }
 
