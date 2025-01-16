@@ -12,7 +12,7 @@ class Rettangolo {
 
     public:
 
-        Rettangolo(double altezza, double base){
+    Rettangolo(double altezza, double base) {
         this->altezza = altezza;
         this->base = base;
     }
