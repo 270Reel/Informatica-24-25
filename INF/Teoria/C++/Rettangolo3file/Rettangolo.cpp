@@ -1,48 +1,48 @@
+#include <iostream>
+#include <cmath>
 #include "Rettangolo.h"
 
-// Costruttore che pone a zero base e altezza
-Rettangolo::Rettangolo() : base(0), altezza(0) {}
+//Costruttori
+Rettangolo::Rettangolo()
+    : base(0), altezza(0) {numeroOgetto=1;}
 
-// Costruttore con 1 parametro
-Rettangolo::Rettangolo(double lato) : base(lato), altezza(lato) {}
+Rettangolo::Rettangolo(double lato)
+    : base(lato), altezza(lato) {numeroOgetto=2;}
 
-// Costruttore con 2 parametri
-Rettangolo::Rettangolo(double base, double altezza) : base(base), altezza(altezza) {}
+Rettangolo::Rettangolo(double base, double altezza)
+    : base(base), altezza(altezza) {numeroOgetto=3;}
+
 
 // Distruttore
-Rettangolo::~Rettangolo() {
-    std::cout << "Hai chiamato il distruttore" << std::endl;
-}
+Rettangolo::~Rettangolo() {std::cout << "Hai chiamato il distruttore" << std::endl;}
+
 
 // Metodi setter
-void Rettangolo::setBase(double base) {
-    this->base = base;
-}
+void Rettangolo::setBase(double base)       {this->base = base;}
+void Rettangolo::setAltezza(double altezza) {this->altezza = altezza;}
 
-void Rettangolo::setAltezza(double altezza) {
-    this->altezza = altezza;
-}
 
 // Metodi getter
-double Rettangolo::getBase() const {
-    return base;
-}
+double Rettangolo::getBase()     {return base;}
+double Rettangolo::getAltezza()  {return altezza;}
+double Rettangolo::getPerimetro(){return Rettangolo::calcolaPerimetro();}
+double Rettangolo::getArea()     {return Rettangolo::calcolaArea();}
+double Rettangolo::getDiagonale(){return Rettangolo::calcolaDiagonale();}
 
-double Rettangolo::getAltezza() const {
-    return altezza;
-}
 
-// Calcola il perimetro
-double Rettangolo::calcolaPerimetro() const {
-    return 2 * (base + altezza);
-}
+// Metodi di calcolo
+double Rettangolo::calcolaPerimetro() {return 2 * (base + altezza);}
+double Rettangolo::calcolaArea()      {return base * altezza;}
+double Rettangolo::calcolaDiagonale() {return sqrt(base * base + altezza * altezza);}
 
-// Calcola l'area
-double Rettangolo::calcolaArea() const {
-    return base * altezza;
-}
-
-// Calcola la diagonale
-double Rettangolo::calcolaDiagonale() const {
-    return std::sqrt(base * base + altezza * altezza);
+//Metodo stampa informazioni
+void Rettangolo::stampa() {
+    std::cout <<"*************RETTANGOLO NUMERO " << numeroOgetto << "**************" <<std::endl;
+    std::cout <<"Base:      " << getBase() << std::endl;
+    std::cout <<"Altezza:   " << getAltezza() << std::endl;
+    std::cout <<"Perimetro: " << getPerimetro() << std::endl;
+    std::cout <<"Area:      " << getArea() << std::endl;
+    std::cout <<"Diagonale: " << getDiagonale() << std::endl;
+    std::cout <<"********************************************" << std::endl;
+    std::cout << std::endl;
 }

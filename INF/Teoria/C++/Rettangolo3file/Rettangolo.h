@@ -5,35 +5,41 @@
 #include <cmath>
 
 class Rettangolo {
-private:
-    double base;
-    double altezza;
+    private:
 
-public:
-    // Costruttore che pone a zero base e altezza
-    Rettangolo();
+        //Attributi dell'oggetto
+        double base;
+        double altezza;
+        int numeroOgetto;
 
-    // Costruttore con 1 parametro
-    Rettangolo(double lato);
+    public:
 
-    // Costruttore con 2 parametri
-    Rettangolo(double base, double altezza);
+        //Costruttori
+        Rettangolo();
+        Rettangolo(double lato);
+        Rettangolo(double base, double altezza);
 
-    // Distruttore
-    ~Rettangolo();
+        //Distruttore
+        ~Rettangolo();
 
-    // Metodi setter
-    void setBase(double base);
-    void setAltezza(double altezza);
+        //Metodi set
+        void setBase(double base);
+        void setAltezza(double altezza);
 
-    // Metodi getter
-    double getBase() const;
-    double getAltezza() const;
+        //Metodi calcolo
+        double calcolaPerimetro();
+        double calcolaArea();
+        double calcolaDiagonale();
 
-    // Altri metodi
-    double calcolaPerimetro() const;
-    double calcolaArea() const;
-    double calcolaDiagonale() const;
+        //Metodi get
+        double getBase();
+        double getAltezza();
+        double getPerimetro();
+        double getArea();
+        double getDiagonale();
+
+        //Metodo stampa informazioni
+        void stampa();
 };
 
 #endif // RETTANGOLO_H
