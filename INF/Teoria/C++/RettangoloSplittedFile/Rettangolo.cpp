@@ -4,13 +4,13 @@
 
 //Costruttori
 Rettangolo::Rettangolo()
-    : base(0), altezza(0) {numeroOgetto=1;}
+    : base(0), altezza(0) {numeroOggetto=1;}
 
 Rettangolo::Rettangolo(double lato)
-    : base(lato), altezza(lato) {numeroOgetto=2;}
+    : base(lato), altezza(lato) {numeroOggetto=2;}
 
 Rettangolo::Rettangolo(double base, double altezza)
-    : base(base), altezza(altezza) {numeroOgetto=3;}
+    : base(base), altezza(altezza) {numeroOggetto=3;}
 
 
 // Distruttore
@@ -37,7 +37,7 @@ double Rettangolo::calcolaDiagonale() {return sqrt(base * base + altezza * altez
 
 //Metodo stampa informazioni
 void Rettangolo::stampa() {
-    std::cout <<"*************RETTANGOLO NUMERO " << numeroOgetto << "**************" <<std::endl;
+    std::cout <<"*************RETTANGOLO NUMERO " << numeroOggetto << "**************" <<std::endl;
     std::cout <<"Base:      " << getBase() << std::endl;
     std::cout <<"Altezza:   " << getAltezza() << std::endl;
     std::cout <<"Perimetro: " << getPerimetro() << std::endl;
