@@ -4,7 +4,6 @@
 
 //Costruttori
 Rettangolo::Rettangolo(){
-    numeroRettangoli++;
     base = 0;
     altezza = 0;
     numeroOggetto = 1;

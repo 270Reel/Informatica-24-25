@@ -14,8 +14,6 @@ class Rettangolo {
 
     public:
 
-        static int numeroRettangoli;
-
         //Costruttori
         Rettangolo();
         Rettangolo(double lato);
