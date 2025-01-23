@@ -3,14 +3,25 @@
 #include "Rettangolo.h"
 
 //Costruttori
-Rettangolo::Rettangolo()
-    : base(0), altezza(0) {numeroOggetto=1;}
+Rettangolo::Rettangolo(){
+    numeroRettangoli++;
+    base = 0;
+    altezza = 0;
+    numeroOggetto = 1;
+}
 
-Rettangolo::Rettangolo(double lato)
-    : base(lato), altezza(lato) {numeroOggetto=2;}
+Rettangolo::Rettangolo(double lato){
+    base = lato;
+    altezza = lato;
+    numeroOggetto = 2;
+}
 
-Rettangolo::Rettangolo(double base, double altezza)
-    : base(base), altezza(altezza) {numeroOggetto=3;}
+Rettangolo::Rettangolo(double base, double altezza){
+    this->altezza = altezza;
+    this->base = base;
+    numeroOggetto = 3;
+}
+
 
 
 // Distruttore
