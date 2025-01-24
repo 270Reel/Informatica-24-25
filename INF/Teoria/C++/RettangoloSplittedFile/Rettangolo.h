@@ -10,9 +10,10 @@ class Rettangolo {
         //Attributi dell'oggetto
         double base;
         double altezza;
-        int numeroOggetto;
+        int numeroOggetto = 0;
 
     public:
+
 
         //Costruttori
         Rettangolo();
