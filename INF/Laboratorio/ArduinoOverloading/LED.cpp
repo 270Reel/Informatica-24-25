@@ -1,3 +1,4 @@
+
 #include "LED.h"
 #include <Arduino.h>
 
@@ -14,7 +15,6 @@ void LED::accendi() {
   stato = true;
 }
 
-// Accendi il LED per un determinato periodo di tempo e poi spegnilo
 void LED::accendi(int durata) {
   digitalWrite(pin, HIGH);
   delay(durata);
@@ -30,7 +30,6 @@ void LED::spegni() {
 
 // Spegni il LED dopo un determinato periodo di tempo
 void LED::spegni(int ritardo) {
-  accendi();
   delay(ritardo);
   spegni();
 }
@@ -45,7 +44,7 @@ void LED::inverti() {
 void LED::inverti(int nLampeggi) {
   for (int i = 0; i < nLampeggi; i++) {
     inverti();
-    delay(500);
+    delay(100);
   }
 }
 
@@ -59,9 +58,10 @@ void LED::lampeggio(int numero, int durata) {
   }
 }
 
-// Metodo test
+//*************************Metodi test*************************//
+
 void LED::test1() {
-  lampeggio(4, 500);
+  lampeggio(10, 150);
 }
 
 void LED::test2(){
@@ -70,10 +70,18 @@ void LED::test2(){
 }
 
 void LED::test3(){
-  delay(5000);
+  delay(1000);
   accendi();
-  delay(2000);
+  delay(500);
   spegni();
   inverti();
+}
+
+void LED::test4(){
+  for(int i=0; i<5; i++){
+    accendi();
+    delay(1000);
+    spegni();
+  }
 }
 

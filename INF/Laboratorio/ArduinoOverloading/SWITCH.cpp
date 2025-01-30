@@ -1,4 +1,4 @@
-#include "SWITCH.H"
+#include "SWITCH.h"
 #include <Arduino.h>
 
 // Costruttore
