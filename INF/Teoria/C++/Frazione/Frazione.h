@@ -1,21 +1,27 @@
 #ifndef FRAZIONE_H
 #define FRAZIONE_H
 
-class Frazione{
-    private:
-        int num;
-        int den;
-    public:
-        
-        //Costruttore
-        Frazione(int num, int den);
+class Frazione {
+private:
+    int num;
+    int den;
+    static int MCD(int a, int b);  // Metodo statico per calcolare il massimo comune divisore
 
-        //Getters
-        int getNum();
-        int getDen();
+public:
+    // Costruttore
+    Frazione(int num, int den);
 
-        //Setters
-        void setNum(int num);
-        void setDen(int den);
+    // Getters
+    int getNum();
+    int getDen();
+
+    // Setters
+    void setNum(int num);
+    void setDen(int den);
+
+    // Metodi di utilità
+    void semplifica();  // Semplifica la frazione
+    void stampa();  // Stampa la frazione
 };
+
 #endif
