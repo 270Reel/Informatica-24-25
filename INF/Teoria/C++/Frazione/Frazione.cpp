@@ -11,7 +11,6 @@ Frazione::Frazione(int num, int den) {
     }
     this->num = num;
     this->den = den;
-    semplifica(); // Semplifica direttamente la frazione dopo la creazione
 }
 
 // Getter
@@ -20,8 +19,7 @@ int Frazione::getDen() { return den; }
 
 // Setter
 void Frazione::setNum(int num) { 
-    this->num = num; 
-    semplifica(); // Ogni modifica semplifica la frazione automaticamente
+
 }
 
 void Frazione::setDen(int den) {
@@ -30,7 +28,6 @@ void Frazione::setDen(int den) {
         return;
     }
     this->den = den;
-    semplifica();
 }
 
 // Metodo statico per calcolare il massimo comune divisore (MCD)
