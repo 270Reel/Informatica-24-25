@@ -1,17 +1,11 @@
-
 #include "Rettangolo.h"
-#include "Quadrilatero.h"
-#include <iostream>
-#include <cmath>
 
-using namespace std;
 
-Rettangolo::Rettangolo(double base,double altezza):Quadrilatero(base,altezza,base,altezza){
-
-}
+Rettangolo::Rettangolo(double base, double altezza) 
+    : Quadrilatero(base, altezza, base, altezza) {}
 
 double Rettangolo::Perimetro() {
-    return (L1 + L2) * 2;
+    return 2 * (L1 + L2); 
 }
 
 double Rettangolo::Area() {
@@ -19,13 +13,13 @@ double Rettangolo::Area() {
 }
 
 double Rettangolo::Diagonale() {
-    return sqrt(L3 * L3 + L4 * L4);
+    return sqrt(L1 * L1 + L2 * L2);
 }
 
 void Rettangolo::stampa() {
-    cout << "Il valore della base e':      " << l1 << endl;
-    cout << "Il valore dell'altezza e':    " << l2 << endl;
-    cout << "Il valore del perimetro e':   " << Perimetro() << endl;
-    cout << "Il valore dell'area e':       " << Area() << endl;
-    cout << "Il valore della diagonale e': " << Diagonale() << endl;
+    std::cout << "Il valore della base e':      " << L1 << std::endl;
+    std::cout << "Il valore dell'altezza e':    " << L2 << std::endl;
+    std::cout << "Il valore del perimetro e':   " << Perimetro() << std::endl;
+    std::cout << "Il valore dell'area e':       " << Area() << std::endl;
+    std::cout << "Il valore della diagonale e': " << Diagonale() << std::endl;
 }
