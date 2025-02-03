@@ -17,10 +17,12 @@ double Quadrilatero::Area() {
 }
 
 void Quadrilatero::stampa() {
+    std::cout<<"[           VALORI DEL QUADRILATERO         ]"<<std::endl;
+    std::cout<<"---------------------------------------------"<<std::endl;
     std::cout << "Primo lato:                 " << L1 << std::endl;
     std::cout << "Secondo lato:               " << L2 << std::endl;
     std::cout << "Terzo lato:                 " << L3 << std::endl;
     std::cout << "Quarto lato:                " << L4 << std::endl;
     std::cout << "Il valore del perimetro e': " << Perimetro() << std::endl;
-    std::cout << "Il valore dell'area e':     " << Area() << std::endl;
+    std::cout << "Il valore dell'area e':     " << Area() << std::endl << std::endl;
 }

@@ -1,6 +1,5 @@
 #include "Rettangolo.h"
 
-
 Rettangolo::Rettangolo(double base, double altezza): Quadrilatero(base, altezza, base, altezza) {}
 
 double Rettangolo::Perimetro() {
@@ -16,9 +15,11 @@ double Rettangolo::Diagonale() {
 }
 
 void Rettangolo::stampa() {
+    std::cout<<"[           VALORI DEL RETTANGOLO           ]"<<std::endl;
+    std::cout<<"---------------------------------------------"<<std::endl;
     std::cout << "Il valore della base e':      " << L1 << std::endl;
     std::cout << "Il valore dell'altezza e':    " << L2 << std::endl;
     std::cout << "Il valore del perimetro e':   " << Perimetro() << std::endl;
     std::cout << "Il valore dell'area e':       " << Area() << std::endl;
-    std::cout << "Il valore della diagonale e': " << Diagonale() << std::endl;
+    std::cout << "Il valore della diagonale e': " << Diagonale() << std::endl << std::endl;
 }
