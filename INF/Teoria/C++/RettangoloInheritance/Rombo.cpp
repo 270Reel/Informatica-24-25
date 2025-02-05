@@ -22,3 +22,6 @@ void Quadrato::stampa() {
     std::cout << "Il valore dell'area e':       " << Area() << std::endl;
     std::cout << "Il valore della diagonale e': " << Diagonale() << std::endl << std::endl;
 }
+
+
+////DA CAMBIARE
