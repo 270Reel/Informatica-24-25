@@ -14,6 +14,13 @@ double Rettangolo::Diagonale() {
     return sqrt(L1 * L1 + L2 * L2);
 }
 
+
+double Rettangolo::getBase(){return L1;}
+double Rettangolo::getAltezza(){return L2;}
+
+void Rettangolo::setBase(double base){L1=base;}
+void Rettangolo::setAltezza(double altezza){L2=altezza;}
+
 void Rettangolo::stampa() {
     std::cout<<"[           VALORI DEL RETTANGOLO           ]"<<std::endl;
     std::cout<<"---------------------------------------------"<<std::endl;

@@ -15,6 +15,8 @@ public:
     double Perimetro();
     double Area();
 
+    
+
     //Metodo stampa
     void stampa();
 };

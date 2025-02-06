@@ -16,6 +16,14 @@ public:
     double Area();
     double Diagonale();
 
+    //Getters
+    double getBase();
+    double getAltezza();
+
+    //Setters
+    void setBase(double base);
+    void setAltezza(double altezza);
+
     //Metodo stampa
     void stampa();
 };

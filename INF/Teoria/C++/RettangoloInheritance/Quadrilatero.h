@@ -18,8 +18,21 @@ public:
 
     //Metodi calcolatori
     double Perimetro();
-    double Area();
-    
+    //double Area();
+
+
+    //Getters
+    double getLato1();
+    double getLato2();
+    double getLato3();
+    double getLato4();
+
+    //Setters
+    void setLato1(double lato);
+    void setLato2(double lato);
+    void setLato3(double lato);
+    void setLato4(double lato);
+
     //Metodo stampa
     void stampa();
 };

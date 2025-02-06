@@ -1,27 +1,19 @@
-#include "Quadrato.h"
+#include "Rombo.h"
 
-Quadrato::Quadrato(double lato): Rettangolo(lato, lato) {}
+Rombo::Rombo(double lato): Quadrilatero(lato, lato, lato, lato) {}
 
-double Quadrato::Perimetro() {
+double Rombo::Perimetro() {
     return L1*4;
 }
 
-double Quadrato::Area() {
-    return L1 * L1;
+double Rombo::Area() {
+    return (L1 * L1)/2;
 }
 
-double Quadrato::Diagonale() {
-    return sqrt(L1 * L1 + L1 * L1);
-}
-
-void Quadrato::stampa() {
-    std::cout<<"[             VALORI DEL QUADRATO           ]"<<std::endl;
+void Rombo::stampa() {
+    std::cout<<"[               VALORI DEL ROMBO            ]"<<std::endl;
     std::cout<<"---------------------------------------------"<<std::endl;
     std::cout << "Il valore del lato e':        " << L1 << std::endl;
     std::cout << "Il valore del perimetro e':   " << Perimetro() << std::endl;
     std::cout << "Il valore dell'area e':       " << Area() << std::endl;
-    std::cout << "Il valore della diagonale e': " << Diagonale() << std::endl << std::endl;
 }
-
-
-////DA CAMBIARE

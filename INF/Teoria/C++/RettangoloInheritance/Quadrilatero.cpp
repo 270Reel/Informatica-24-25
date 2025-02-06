@@ -11,10 +11,20 @@ double Quadrilatero::Perimetro() {
     return L1 + L2 + L3 + L4;
 }
 
-double Quadrilatero::Area() {
+double Quadrilatero::getLato1(){return L1;}
+double Quadrilatero::getLato2(){return L2;}
+double Quadrilatero::getLato3(){return L3;}
+double Quadrilatero::getLato4(){return L4;}
+
+void Quadrilatero::setLato1(double lato){L1=lato;}
+void Quadrilatero::setLato2(double lato){L2=lato;}
+void Quadrilatero::setLato3(double lato){L3=lato;}
+void Quadrilatero::setLato4(double lato){L4=lato;}
+
+/*double Quadrilatero::Area() {
     double s = (L1 + L2 + L3 + L4) / 2;
     return sqrt((s - L1) * (s - L2) * (s - L3) * (s - L4));
-}
+}*/
 
 void Quadrilatero::stampa() {
     std::cout<<"[           VALORI DEL QUADRILATERO         ]"<<std::endl;
@@ -24,5 +34,5 @@ void Quadrilatero::stampa() {
     std::cout << "Terzo lato:                 " << L3 << std::endl;
     std::cout << "Quarto lato:                " << L4 << std::endl;
     std::cout << "Il valore del perimetro e': " << Perimetro() << std::endl;
-    std::cout << "Il valore dell'area e':     " << Area() << std::endl << std::endl;
+    //std::cout << "Il valore dell'area e':     " << Area() << std::endl << std::endl;
 }
