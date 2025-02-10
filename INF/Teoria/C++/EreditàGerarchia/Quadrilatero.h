@@ -22,10 +22,7 @@ public:
     //double Area();
 
     //Getters
-    double getLato1();
-    double getLato2();
-    double getLato3();
-    double getLato4();
+    int getLati(double lato1,double lato2,double lato3,double lato4);
 
     //Setters
     void setLato1(double lato);
