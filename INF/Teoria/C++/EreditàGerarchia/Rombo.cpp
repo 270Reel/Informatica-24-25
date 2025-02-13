@@ -16,8 +16,6 @@ double Rombo::calcolaArea() {
     return (diagonale1 * diagonale2) / 2;
 }
 
-// Metodo per calcolare la diagonale (non necessaria, già fornita)
 double Rombo::calcolaDiagonale() {
-    // Per un rombo, la diagonale può essere calcolata usando il teorema di Pitagora
     return sqrt((diagonale1 * diagonale1) + (diagonale2 * diagonale2));
 }
