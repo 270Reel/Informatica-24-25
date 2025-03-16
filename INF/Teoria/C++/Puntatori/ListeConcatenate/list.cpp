@@ -1,7 +1,6 @@
 #include <iostream>
 #include "list.h"
 
-using namespace std;
 
 Lista::Lista(){
     testa=nullptr;
@@ -18,7 +17,7 @@ void Lista::InserisciInTesta(int val){
 }
 
 void Lista::InserisciInCoda(int val){
-
+    
     Nodo* temp = new Nodo;
     
     while(testa->next!=nullptr){
@@ -30,7 +29,33 @@ void Lista::InserisciInCoda(int val){
     temp->next=nuovoNodo;
 }
 
-void Lista::Elimina(int val){
-    
+void Lista::VisualizzaLista() {
+    Nodo* temp = testa;
+
+    if (temp == nullptr) {
+        std::cout << "Lista vuota!" << std::endl;
+        return;
+    }
+
+    while (temp != nullptr) {
+        std::cout << "[" << temp->valore << "|" << temp->next << "]" << "-----";
+        temp = temp->next;
+    }
+
+
+    std::cout <<"[|]"<<std::endl;
+}
+
+bool Lista::RicercaNodo(int val) {
+    Nodo* temp = testa;
+
+    while (temp != nullptr) {
+        if (temp->valore == val) {
+            return true;
+        }
+        temp = temp->next;
+    }
+
+    return false;
 }
 

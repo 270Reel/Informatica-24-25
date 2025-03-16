@@ -26,10 +26,10 @@ class Lista{
     void InserisciInTesta(int val);
     void InserisciInCoda(int val);
     void Elimina(int val);
-    void RicercaNodo(int val);
     void VisualizzaLista();
-    void ConteggioNodi();
-    void RimuoviDuplicati();
+    bool RicercaNodo(int val);
+    int ConteggioNodi();
+    int RimuoviDuplicati();
 };
 
 
