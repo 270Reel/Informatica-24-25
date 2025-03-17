@@ -21,7 +21,7 @@ int main(){
 
     lista.VisualizzaLista();
 
-    std::cout<<"Inserisci quanti nodi vuoi inserire in coda:\t";
+    /*std::cout<<"Inserisci quanti nodi vuoi inserire in coda:\t";
     std::cin>>nodiDaCreare;
     for (int i = 0; i < nodiDaCreare; i++)
     {
@@ -29,7 +29,10 @@ int main(){
         lista.InserisciInCoda(num);
     }
 
-    lista.VisualizzaLista();
+    lista.VisualizzaLista();*/
+
+    std::cout<<std::endl<<"Il numero di nodi e'"<< lista.ConteggioNodi();
+    
     
 
 }

@@ -59,3 +59,31 @@ bool Lista::RicercaNodo(int val) {
     return false;
 }
 
+void Lista::Elimina(int val){
+    Nodo* temp = testa;
+
+    while(temp->valore != val){
+        if(temp->valore==val){
+            
+        }
+        temp = temp->next;
+    }
+
+}
+
+int Lista::ConteggioNodi(){
+    Nodo* temp = testa; int numeroNodi=0;
+    
+    
+    while(temp->valore!=0){
+        numeroNodi++;
+        temp = temp->next;
+    }
+    
+    return numeroNodi;
+}
+
+
+
+
+
