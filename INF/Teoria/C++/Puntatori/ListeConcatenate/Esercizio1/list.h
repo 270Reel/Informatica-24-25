@@ -1,16 +1,12 @@
 #ifndef LIST_H
 #define LIST_H
 
-
-
 class Nodo{
 
     public:
     int valore;
     Nodo* next;
 };
-
-
 
 class Lista{
 
