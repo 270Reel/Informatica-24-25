@@ -1,91 +1,93 @@
 #include <iostream>
 #include "list.h"
 
-
-Lista::Lista(){
-    testa=nullptr;
+Lista::Lista()
+{
+    testa = nullptr;
 }
 
-void Lista::InserisciInTesta(int val){
+void Lista::InserisciInTesta(int val)
+{
 
-    Nodo* nuovoNodo = new Nodo;
+    Nodo *nuovoNodo = new Nodo;
 
     nuovoNodo->valore = val;
     nuovoNodo->next = testa;
     testa = nuovoNodo;
-    
 }
 
-void Lista::InserisciInCoda(int val) {
+void Lista::InserisciInCoda(int val)
+{
 
-    Nodo* nuovoNodo = new Nodo;
+    Nodo *nuovoNodo = new Nodo;
     nuovoNodo->valore = val;
+    nuovoNodo->next = nullptr;
 
-    Nodo* temp = testa;
+    Nodo *temp = testa;
 
-    while (temp->next != nullptr) {
+    while (temp->next != nullptr)
+    {
         temp = temp->next;
     }
 
     temp->next = nuovoNodo;
 }
 
-void Lista::VisualizzaLista() {
-    Nodo* temp = testa;
+void Lista::VisualizzaLista()
+{
+    Nodo *temp = testa;
 
-    if (temp == nullptr) {
-        std::cout << "Lista vuota!" << std::endl;
-        return;
-    }
-
-    while (temp != nullptr) {
+    while (temp != nullptr)
+    {
         std::cout << "[" << temp->valore << "|" << temp->next << "]" << "-----";
         temp = temp->next;
     }
 
-    std::cout <<"[|]"<<std::endl;
+    std::cout << "[|]" << std::endl;
 }
 
+bool Lista::Elimina(int val)
+{
 
-void Lista::Elimina(int val) {
+    Nodo *temp = testa;
 
-    if (testa == nullptr) {
-        return;
-    }
+    while (temp->next != nullptr)
+    {
+        if (temp->next->valore == val)
+        {
 
-    Nodo* temp = testa;
-
-    while (temp->next != nullptr) {
-        if (temp->next->valore == val) {
-
-            Nodo* daEliminare = temp->next;
+            Nodo *daEliminare = temp->next;
             temp->next = temp->next->next;
             delete daEliminare;
-            return;
+            return true;
         }
         temp = temp->next;
     }
-
 }
 
+int Lista::ConteggioNodi()
+{
 
-int Lista::ConteggioNodi(){
-    Nodo* temp = testa; int numeroNodi=0;
-    
-    
-    while(temp != nullptr){
+    Nodo *temp = testa;
+    int numeroNodi = 0;
+
+    while (temp != nullptr)
+    {
         numeroNodi++;
         temp = temp->next;
     }
-    
+
     return numeroNodi;
 }
 
-bool Lista::RicercaNodo(int val) {
-    Nodo* temp = testa;
+bool Lista::RicercaNodo(int val)
+{
+    Nodo *temp = testa;
 
-    while (temp != nullptr) {
-        if (temp->valore == val) {
+    while (temp != nullptr)
+    {
+        if (temp->valore == val)
+        {
             return true;
         }
         temp = temp->next;
@@ -94,17 +96,19 @@ bool Lista::RicercaNodo(int val) {
     return false;
 }
 
-int Lista::RimuoviDuplicati(){
-    Nodo* temp = testa;
+int Lista::RimuoviDuplicati()
+{
+    Nodo *temp = testa;
+    int nodiRimossi;
 
-    while(temp != nullptr){
-        
+    while (temp != nullptr)
+    {
+        if (temp->valore == temp->next->valore)
+        {
+            temp->next = temp->next->next;
+            nodiRimossi++;
+        }
+        temp = temp->next;
     }
+    return nodiRimossi;
 }
-
-
-
-
-
-
-

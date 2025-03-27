@@ -1,29 +1,29 @@
 #ifndef LIST_H
 #define LIST_H
 
-class Nodo{
+class Nodo
+{
 
-    public:
+public:
     int valore;
-    Nodo* next;
+    Nodo *next;
 };
 
-class Lista{
+class Lista
+{
 
-    private:
-    Nodo* testa;
+private:
+    Nodo *testa;
 
-    public:
+public:
     Lista();
     void InserisciInTesta(int val);
     void InserisciInCoda(int val);
     void VisualizzaLista();
-    void Elimina(int val);
+    bool Elimina(int val);
     bool RicercaNodo(int val);
     int ConteggioNodi();
     int RimuoviDuplicati();
 };
-
-
 
 #endif
