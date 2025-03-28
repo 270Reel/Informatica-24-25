@@ -8,9 +8,7 @@ Lista::Lista()
 
 void Lista::InserisciInTesta(int val)
 {
-
     Nodo *nuovoNodo = new Nodo;
-
     nuovoNodo->valore = val;
     nuovoNodo->next = testa;
     testa = nuovoNodo;
@@ -18,13 +16,17 @@ void Lista::InserisciInTesta(int val)
 
 void Lista::InserisciInCoda(int val)
 {
-
     Nodo *nuovoNodo = new Nodo;
     nuovoNodo->valore = val;
     nuovoNodo->next = nullptr;
 
-    Nodo *temp = testa;
+    if (testa == nullptr)
+    {
+        testa = nuovoNodo;
+        return;
+    }
 
+    Nodo *temp = testa;
     while (temp->next != nullptr)
     {
         temp = temp->next;
@@ -36,26 +38,33 @@ void Lista::InserisciInCoda(int val)
 void Lista::VisualizzaLista()
 {
     Nodo *temp = testa;
-
     while (temp != nullptr)
     {
         std::cout << "[" << temp->valore << "|" << temp->next << "]" << "-----";
         temp = temp->next;
     }
-
     std::cout << "[|]" << std::endl;
 }
 
 bool Lista::Elimina(int val)
 {
+    if (testa == nullptr)  // Lista vuota
+        return false;
+
+
+    if (testa->valore == val)
+    {
+        Nodo *daEliminare = testa;
+        testa = testa->next;
+        delete daEliminare;
+        return true;
+    }
 
     Nodo *temp = testa;
-
     while (temp->next != nullptr)
     {
         if (temp->next->valore == val)
         {
-
             Nodo *daEliminare = temp->next;
             temp->next = temp->next->next;
             delete daEliminare;
@@ -63,11 +72,12 @@ bool Lista::Elimina(int val)
         }
         temp = temp->next;
     }
+
+    return false;
 }
 
 int Lista::ConteggioNodi()
 {
-
     Nodo *temp = testa;
     int numeroNodi = 0;
 
@@ -87,9 +97,7 @@ bool Lista::RicercaNodo(int val)
     while (temp != nullptr)
     {
         if (temp->valore == val)
-        {
             return true;
-        }
         temp = temp->next;
     }
 
@@ -98,17 +106,35 @@ bool Lista::RicercaNodo(int val)
 
 int Lista::RimuoviDuplicati()
 {
-    Nodo *temp = testa;
-    int nodiRimossi;
+    if (testa == nullptr)return 0;
 
+    int nodiRimossi = 0;
+    Nodo *temp = testa;
+
+  
     while (temp != nullptr)
     {
-        if (temp->valore == temp->next->valore)
+        Nodo *check = temp;
+
+        while (check->next != nullptr)
         {
-            temp->next = temp->next->next;
-            nodiRimossi++;
+            if (check->next->valore == temp->valore)
+            {
+                // Rimuoviamo il nodo duplicato
+                Nodo *daEliminare = check->next;
+                check->next = check->next->next;
+                delete daEliminare;
+                nodiRimossi++;
+            }
+            else
+            {
+                check = check->next;
+            }
         }
+
         temp = temp->next;
     }
+
     return nodiRimossi;
 }
+

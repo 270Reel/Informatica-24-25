@@ -15,7 +15,7 @@ int main()
     std::cin >> nodiDaCreare;
     for (int i = 0; i < nodiDaCreare; i++)
     {
-        int num = rand() % 1001;
+        int num = rand() % 2;
         lista.InserisciInTesta(num);
     }
     lista.VisualizzaLista();
@@ -25,19 +25,23 @@ int main()
     std::cin >> nodiDaCreare;
     for (int i = 0; i < nodiDaCreare; i++)
     {
-        int num = rand() % 1001;
+        int num = rand() % 2;
         lista.InserisciInCoda(num);
     }
     lista.VisualizzaLista();
     std::cout << "[La lista e' formata da: " << lista.ConteggioNodi() << " nodi]" << std::endl;
 
+    std::cout<<"Nodi duplicati eliminati(se presenti)"<<std::endl;
+    lista.RimuoviDuplicati();
+    lista.VisualizzaLista();
+    
     std::cout << "Inserisci il valore da eliminare:" << "\t";
     int nodoDaEliminare;
     std::cin >> nodoDaEliminare;
 
     if (lista.Elimina(nodoDaEliminare))
     {
-        std::cout << "Elementi della list aggiornati:" << "\t";
+        std::cout << "Elementi della list aggiornati:" << std::endl;
         lista.VisualizzaLista();
     }
     else
@@ -46,5 +50,9 @@ int main()
         lista.VisualizzaLista();
     }
 
+    std::cout<<"Inserisci il nodo da cercare:"<<"\t";
+    int nodoDaCercare; std::cin>>nodoDaCercare;
+    if(lista.RicercaNodo(nodoDaCercare)){std::cout<<"Elemento della lista trovato!";}
+    
     return 0;
 }
