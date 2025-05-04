@@ -28,8 +28,8 @@ int main() {
     fclose(fileptr);
 
     fileptr = fopen("Studenti.dat", "r+b");
-    int Cont = LunghezzaRecord(fileptr);
-    printf();
+    int NumeriRecord= LunghezzaRecord(fileptr);
+    printf("Nel file sono presenti %d record", NumeriRecord);
     fclose(fileptr);
 
     fileptr = fopen("Studenti.dat", "rb");
