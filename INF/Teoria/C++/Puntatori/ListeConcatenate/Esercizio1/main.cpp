@@ -15,7 +15,7 @@ int main()
     std::cin >> nodiDaCreare;
     for (int i = 0; i < nodiDaCreare; i++)
     {
-        int num = rand() % 2;
+        int num = rand() % 100;
         lista.InserisciInTesta(num);
     }
     lista.VisualizzaLista();
