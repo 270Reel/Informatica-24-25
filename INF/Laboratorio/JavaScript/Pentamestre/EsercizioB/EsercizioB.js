@@ -38,7 +38,7 @@ if (Number.isNaN(number1) || Number.isNaN(number2)) {
       break;
     default:
       alert("Errore: operatore non valido.");
-      return;
+      break;
   }
 
   // Mostra il risultato
