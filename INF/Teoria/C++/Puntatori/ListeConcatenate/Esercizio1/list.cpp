@@ -48,9 +48,8 @@ void Lista::VisualizzaLista()
 
 bool Lista::Elimina(int val)
 {
-    if (testa == nullptr)  // Lista vuota
+    if (testa == nullptr) // Lista vuota
         return false;
-
 
     if (testa->valore == val)
     {
@@ -106,12 +105,12 @@ bool Lista::RicercaNodo(int val)
 
 int Lista::RimuoviDuplicati()
 {
-    if (testa == nullptr)return 0;
+    if (testa == nullptr)
+        return 0;
 
     int nodiRimossi = 0;
     Nodo *temp = testa;
 
-  
     while (temp != nullptr)
     {
         Nodo *check = temp;
@@ -137,4 +136,3 @@ int Lista::RimuoviDuplicati()
 
     return nodiRimossi;
 }
-

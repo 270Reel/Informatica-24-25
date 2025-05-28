@@ -3,8 +3,9 @@
 #include "Quadrato.h"
 #include "Rombo.h"
 
-int main() {
-    Quadrilatero qrd(10,8,4,1);
+int main()
+{
+    Quadrilatero qrd(10, 8, 4, 1);
     qrd.stampa();
 
     Rettangolo ret(5, 3);

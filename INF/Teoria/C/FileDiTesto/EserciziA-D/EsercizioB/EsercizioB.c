@@ -1,33 +1,38 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
 
-    FILE* nomiTxt;
-    FILE* nomi2Txt;
+    FILE *nomiTxt;
+    FILE *nomi2Txt;
     char ch;
 
     // Apri il file nomi.txt in modalità lettura
     nomiTxt = fopen("nomi.txt", "r");
-    if (nomiTxt == NULL) {
+    if (nomiTxt == NULL)
+    {
         printf("Errore nell'apertura del file nomi.txt\n");
         return 1;
     }
 
     // Apri il file nomi2.TXT in modalità scrittura
     nomi2Txt = fopen("nomi2.txt", "w");
-    if (nomi2Txt == NULL) {
+    if (nomi2Txt == NULL)
+    {
         printf("Errore nell'apertura del file nomi2.TXT.\n");
         fclose(nomiTxt);
         return 1;
     }
 
     // Leggi carattere per carattere e converti in maiuscolo se è una lettera minuscola
-    while ((ch = fgetc(nomiTxt)) != EOF) {
+    while ((ch = fgetc(nomiTxt)) != EOF)
+    {
 
-        if (ch >= 'a' && ch <= 'z') {
-            ch = ch - 32;  // Converte il carattere in maiuscolo
+        if (ch >= 'a' && ch <= 'z')
+        {
+            ch = ch - 32; // Converte il carattere in maiuscolo
         }
-        fputc(ch, nomi2Txt);  // Scrivi il carattere nel file nomi2.TXT
+        fputc(ch, nomi2Txt); // Scrivi il carattere nel file nomi2.TXT
     }
 
     // Chiudi entrambi i file

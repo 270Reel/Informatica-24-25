@@ -1,12 +1,14 @@
 #include <stdio.h>
 
-struct Tempo {
+struct Tempo
+{
     int ore;
     int minuti;
     int secondi;
 };
 
-int main() {
+int main()
+{
     struct Tempo t1, t2, diff;
 
     printf("Inserisci il primo tempo (ore minuti secondi): ");
@@ -20,7 +22,8 @@ int main() {
 
     int diff_secondiTotali = t1_secondiTotali - t2_secondiTotali;
 
-    if (diff_secondiTotali < 0) {
+    if (diff_secondiTotali < 0)
+    {
         diff_secondiTotali = -diff_secondiTotali;
     }
 

@@ -13,24 +13,30 @@ SWITCH switch3(8);
 SWITCH switch2(10);
 SWITCH switch1(12);
 
-void setup() {
+void setup()
+{
   // Inizializzazione degli oggetti già gestita nei costruttori
 }
 
-void loop() {
-  if (switch1.press()) {
+void loop()
+{
+  if (switch1.press())
+  {
     led1.test1();
   }
 
-  if (switch2.press()) {
+  if (switch2.press())
+  {
     led2.test2();
   }
 
-  if (switch3.press()) {
+  if (switch3.press())
+  {
     led3.test3();
   }
 
-  if (switch4.press()) {
+  if (switch4.press())
+  {
     led4.test4();
   }
 }

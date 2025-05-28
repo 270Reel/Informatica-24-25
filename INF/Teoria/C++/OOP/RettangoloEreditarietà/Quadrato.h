@@ -3,20 +3,20 @@
 
 #include "Rettangolo.h"
 
-//Classe Quadrato sotto classe di Quadrilatero
-class Quadrato : public Rettangolo{
+// Classe Quadrato sotto classe di Quadrilatero
+class Quadrato : public Rettangolo
+{
 
 public:
-
-    //Costruttore
+    // Costruttore
     Quadrato(double lato);
 
-    //Metodi calcolatori
+    // Metodi calcolatori
     double Perimetro();
     double Area();
     double Diagonale();
 
-    //Metodo stampa
+    // Metodo stampa
     void stampa();
 };
 

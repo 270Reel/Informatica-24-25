@@ -3,28 +3,28 @@
 
 #include "Quadrilatero.h"
 
-//Classe Rettangolo sotto classe di Quadrilatero
-class Rettangolo : public Quadrilatero {
+// Classe Rettangolo sotto classe di Quadrilatero
+class Rettangolo : public Quadrilatero
+{
 
 public:
-
-    //Costruttore
+    // Costruttore
     Rettangolo(double base, double altezza);
 
-    //Metodi calcolatori
+    // Metodi calcolatori
     double Perimetro();
     double Area();
     double Diagonale();
 
-    //Getters
+    // Getters
     double getBase();
     double getAltezza();
 
-    //Setters
+    // Setters
     void setBase(double base);
     void setAltezza(double altezza);
 
-    //Metodo stampa
+    // Metodo stampa
     void stampa();
 };
 

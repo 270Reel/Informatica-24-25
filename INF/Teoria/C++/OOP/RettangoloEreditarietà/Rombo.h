@@ -3,21 +3,19 @@
 
 #include "Quadrilatero.h"
 
-//Classe Rettangolo sotto classe di Quadrilatero
-class Rombo : public Quadrilatero {
+// Classe Rettangolo sotto classe di Quadrilatero
+class Rombo : public Quadrilatero
+{
 
 public:
-
-    //Costruttore
+    // Costruttore
     Rombo(double lato);
 
-    //Metodi calcolatori
+    // Metodi calcolatori
     double Perimetro();
     double Area();
 
-    
-
-    //Metodo stampa
+    // Metodo stampa
     void stampa();
 };
 

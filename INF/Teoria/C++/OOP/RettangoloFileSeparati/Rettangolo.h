@@ -4,43 +4,41 @@
 #include <iostream>
 #include <cmath>
 
-class Rettangolo {
-    private:
+class Rettangolo
+{
+private:
+    // Attributi dell'oggetto
+    double base;
+    double altezza;
+    int numeroOggetto = 0;
 
-        //Attributi dell'oggetto
-        double base;
-        double altezza;
-        int numeroOggetto = 0;
+public:
+    // Costruttori
+    Rettangolo();
+    Rettangolo(double lato);
+    Rettangolo(double base, double altezza);
 
-    public:
+    // Distruttore
+    ~Rettangolo();
 
+    // Metodi set
+    void setBase(double base);
+    void setAltezza(double altezza);
 
-        //Costruttori
-        Rettangolo();
-        Rettangolo(double lato);
-        Rettangolo(double base, double altezza);
+    // Metodi calcolo
+    double calcolaPerimetro();
+    double calcolaArea();
+    double calcolaDiagonale();
 
-        //Distruttore
-        ~Rettangolo();
+    // Metodi get
+    double getBase();
+    double getAltezza();
+    double getPerimetro();
+    double getArea();
+    double getDiagonale();
 
-        //Metodi set
-        void setBase(double base);
-        void setAltezza(double altezza);
-
-        //Metodi calcolo
-        double calcolaPerimetro();
-        double calcolaArea();
-        double calcolaDiagonale();
-
-        //Metodi get
-        double getBase();
-        double getAltezza();
-        double getPerimetro();
-        double getArea();
-        double getDiagonale();
-
-        //Metodo stampa informazioni
-        void stampa();
+    // Metodo stampa informazioni
+    void stampa();
 };
 
 #endif // RETTANGOLO_H

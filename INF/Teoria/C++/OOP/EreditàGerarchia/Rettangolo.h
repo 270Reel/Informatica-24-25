@@ -4,7 +4,8 @@
 #include "Quadrilatero.h"
 #include <string>
 
-class Rettangolo : public Quadrilatero {
+class Rettangolo : public Quadrilatero
+{
 private:
     std::string colore;
 

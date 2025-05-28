@@ -1,10 +1,11 @@
 #include <iostream>
 #include "Rettangolo.h"
 
-int main() {
+int main()
+{
     Rettangolo rettangolo1;
     Rettangolo rettangolo2(14);
-    Rettangolo rettangolo3(20,10);
+    Rettangolo rettangolo3(20, 10);
 
     rettangolo1.stampa();
     rettangolo2.stampa();

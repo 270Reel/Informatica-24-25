@@ -4,7 +4,8 @@
 #include "Quadrilatero.h"
 #include <cmath>
 
-class Rombo : public Quadrilatero {
+class Rombo : public Quadrilatero
+{
 private:
     double diagonale1, diagonale2;
 

@@ -6,28 +6,31 @@
 #define NUM_VOTI 4
 #define NUM_STUD 1
 
-typedef struct data {
+typedef struct data
+{
     int giorno;
     int mese;
     int anno;
-}data;
+} data;
 
-typedef struct Studente {
+typedef struct Studente
+{
     char nome[30];
     char cognome[DIM_COGN];
     data dataNascita;
     int voti[NUM_VOTI];
 } Studente;
 
-void caricaTab(Studente t[]); //Carica i dati per un singolo studente
-void stampaTab(Studente t[]); //Stampa la tabella di studenti
-int ricercaCogn(Studente t[], char cog[]); //Cerca uno studente per cognome
-int stampaMedia(Studente t[]); //Stampa la media voti per ogni studente e conta quante medie sono ≥ 6.
-int studenti10(Studente t[]); //Conta gli studenti con almeno un voto pari a 10
-void formattaCogn(Studente t[]); //Riscrive correttamente i cognomi con la prima lettera maiuscola e le altre minuscole
+void caricaTab(Studente t[]);              // Carica i dati per un singolo studente
+void stampaTab(Studente t[]);              // Stampa la tabella di studenti
+int ricercaCogn(Studente t[], char cog[]); // Cerca uno studente per cognome
+int stampaMedia(Studente t[]);             // Stampa la media voti per ogni studente e conta quante medie sono ≥ 6.
+int studenti10(Studente t[]);              // Conta gli studenti con almeno un voto pari a 10
+void formattaCogn(Studente t[]);           // Riscrive correttamente i cognomi con la prima lettera maiuscola e le altre minuscole
 int trovaVotoMaggiore(Studente t[]);
 
-int main() {
+int main()
+{
 
     Studente studente[NUM_STUD];
 
@@ -35,14 +38,16 @@ int main() {
     formattaCogn(studente);
     stampaTab(studente);
 
-
     char TrovaCognome[30];
     printf("Inserisci il cognome da cercare: ");
     scanf("%s", TrovaCognome);
     int trovato = ricercaCogn(studente, TrovaCognome);
-    if(trovato == 1){
+    if (trovato == 1)
+    {
         printf("Cognome %s trovato!", TrovaCognome);
-    }else{
+    }
+    else
+    {
         printf("Cognome non trovato");
     }
     printf("\n+---------------------------------------------------------+\n");
@@ -54,17 +59,24 @@ int main() {
     int stud10 = studenti10(studente);
     printf("\n+---------------------------------------------------------+\n");
 
-    if(stud10 == 1) {
+    if (stud10 == 1)
+    {
         printf("solo uno studente ha almeno un voto pari a 10\n");
-    } else if(stud10 > 1) {
+    }
+    else if (stud10 > 1)
+    {
         printf("%d alunni hanno almeno un voto pari a 10\n", stud10);
-    } else {
+    }
+    else
+    {
         printf("Nessuno studente ha un voto pari a 10\n");
     }
 }
 
-void caricaTab(Studente t[]) {
-    for(int i=0; i<NUM_STUD; i++) {
+void caricaTab(Studente t[])
+{
+    for (int i = 0; i < NUM_STUD; i++)
+    {
         printf("Inserisci nome e cognome dello studente: ");
         scanf("%s %s", t[i].nome, t[i].cognome);
 
@@ -72,72 +84,94 @@ void caricaTab(Studente t[]) {
         scanf("%d %d %d", &t[i].dataNascita.giorno, &t[i].dataNascita.mese, &t[i].dataNascita.anno);
 
         printf("Inserisci i voti dello studente:\n");
-        for(int j=0; j<NUM_VOTI; j++) {
-            printf("Voto n°%d: ", j+1);
+        for (int j = 0; j < NUM_VOTI; j++)
+        {
+            printf("Voto n°%d: ", j + 1);
             scanf("%d", &t[i].voti[j]);
         }
     }
 }
 
-void stampaTab(Studente t[]) {
-    for(int i=0; i<NUM_STUD; i++) {
+void stampaTab(Studente t[])
+{
+    for (int i = 0; i < NUM_STUD; i++)
+    {
         printf("\n+---------------------------------------------------------+\n");
         printf(" Nome e cognome :     %s %s                               \n", t[i].nome, t[i].cognome);
         printf(" Data di nascita:     %d/%d/%d                            \n", t[i].dataNascita.giorno, t[i].dataNascita.mese, t[i].dataNascita.anno);
         printf(" Voti dell' alunno:   ");
-        for(int j=0; j<NUM_VOTI; j++) {
+        for (int j = 0; j < NUM_VOTI; j++)
+        {
             printf("%d ", t[i].voti[j]);
         }
     }
     printf("\n+---------------------------------------------------------+\n");
 }
 
-int ricercaCogn(Studente t[], char cog[]) {
-    for(int i=0; i<NUM_STUD; i++) {
-        if(strcmp(t[i].cognome, cog)==0) {
+int ricercaCogn(Studente t[], char cog[])
+{
+    for (int i = 0; i < NUM_STUD; i++)
+    {
+        if (strcmp(t[i].cognome, cog) == 0)
+        {
             return 1;
-        }else {
+        }
+        else
+        {
             return 0;
         }
     }
 }
 
-int stampaMedia(Studente t[]) {
-    int MediePos=0;
-    for(int i=0; i<NUM_STUD; i++) {
+int stampaMedia(Studente t[])
+{
+    int MediePos = 0;
+    for (int i = 0; i < NUM_STUD; i++)
+    {
         int somma = 0;
-        for(int j=0; j<NUM_VOTI; j++) {
+        for (int j = 0; j < NUM_VOTI; j++)
+        {
             somma += t[i].voti[j];
         }
         int media = somma / NUM_VOTI;
         printf("%s %s media: %d\n", t[i].nome, t[i].cognome, media);
-        if(media>=6) {
+        if (media >= 6)
+        {
             MediePos++;
         }
     }
     return MediePos;
 }
 
-int studenti10(Studente t[]) {
-    int cont=0;
-    for(int i=0; i<NUM_STUD; i++) {
-        for(int j=0; j<NUM_VOTI; j++) {
-            if(t[i].voti[j] == 10) {
-            cont++;
+int studenti10(Studente t[])
+{
+    int cont = 0;
+    for (int i = 0; i < NUM_STUD; i++)
+    {
+        for (int j = 0; j < NUM_VOTI; j++)
+        {
+            if (t[i].voti[j] == 10)
+            {
+                cont++;
             }
         }
     }
     return cont;
 }
 
-void formattaCogn(Studente t[]) {
-    for(int i = 0; i < NUM_STUD; i++) {
-        if(t[i].cognome[0] >= 'a' && t[i].cognome[0] <= 'z') {
+void formattaCogn(Studente t[])
+{
+    for (int i = 0; i < NUM_STUD; i++)
+    {
+        if (t[i].cognome[0] >= 'a' && t[i].cognome[0] <= 'z')
+        {
             t[i].cognome[0] -= 32;
         }
-        for(int j = 1; t[i].cognome[j] != '\0'; j++) {
-            if(t[i].cognome[j] >= 'A' && t[i].cognome[j] <= 'Z') {
-                t[i].cognome[j] += 32;  
+        for (int j = 1; t[i].cognome[j] != '\0'; j++)
+        {
+            if (t[i].cognome[j] >= 'A' && t[i].cognome[j] <= 'Z')
+            {
+                t[i].cognome[j] += 32;
             }
         }
     }

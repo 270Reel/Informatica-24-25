@@ -1,28 +1,32 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
 
-    FILE* testoIN;
-    FILE* testoOUT;
+    FILE *testoIN;
+    FILE *testoOUT;
     char ch;
 
     // Apri il file di input in modalità lettura
     testoIN = fopen("IN.txt", "r");
-    if(testoIN == NULL) {
+    if (testoIN == NULL)
+    {
         printf("Errore nell'apertura del file IN.txt\n");
         return 1;
     }
 
     // Apri il file di output in modalità scrittura
     testoOUT = fopen("OUT.txt", "w");
-    if(testoOUT == NULL) {
+    if (testoOUT == NULL)
+    {
         printf("Errore nell'apertura del file OUT.txt\n");
         fclose(testoIN); // Chiudi il file di input se c'è un errore
         return 1;
     }
 
     // Copia il contenuto carattere per carattere
-    while((ch = fgetc(testoIN)) != EOF) {
+    while ((ch = fgetc(testoIN)) != EOF)
+    {
         fputc(ch, testoOUT);
     }
 
@@ -30,15 +34,17 @@ int main() {
     fclose(testoIN);
     fclose(testoOUT);
 
-    //Rilegge il file di output per stamparlo a schermo
+    // Rilegge il file di output per stamparlo a schermo
     testoOUT = fopen("OUT.txt", "r");
-    if(testoOUT == NULL) {
+    if (testoOUT == NULL)
+    {
         printf("Errore nell'apertura del file OUT.txt per la lettura\n");
         return 1;
     }
 
     // Stampa il contenuto di OUT.txt
-    while((ch = fgetc(testoOUT)) != EOF) {
+    while ((ch = fgetc(testoOUT)) != EOF)
+    {
         printf("%c", ch);
     }
 

@@ -1,42 +1,51 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
 
     FILE *file;
     char ch;
     int numCaratteri = 0, numParole = 0, numRighe = 0;
-    int statoParola= 0; // Per indicare se siamo all'interno di una parola
+    int statoParola = 0; // Per indicare se siamo all'interno di una parola
 
     // Apri il file in modalità lettura
     file = fopen("testo.txt", "r");
-    if (file == NULL) {
+    if (file == NULL)
+    {
         printf("Errore nell'apertura del file.\n");
         return 1;
     }
 
-    while ((ch = fgetc(file)) != EOF) {
+    while ((ch = fgetc(file)) != EOF)
+    {
 
         // Conto i caratteri non spazio, tab o righe
-        if (ch != ' ' && ch != '\t' && ch != '\n') {
+        if (ch != ' ' && ch != '\t' && ch != '\n')
+        {
             numCaratteri++;
         }
 
-        //Condidizione per contare le righe
-        if (ch == '\n') {
+        // Condidizione per contare le righe
+        if (ch == '\n')
+        {
             numRighe++;
         }
 
-        //Condidizione per contare le parole
-        if (ch != ' ' && ch != '\t' && ch != '\n' && statoParola == 0) {
-            statoParola = 1;  // Siamo entrati in una parola
+        // Condidizione per contare le parole
+        if (ch != ' ' && ch != '\t' && ch != '\n' && statoParola == 0)
+        {
+            statoParola = 1; // Siamo entrati in una parola
             numParole++;
-        } else if (ch == ' ' || ch == '\t' || ch == '\n') {
-            statoParola = 0;  // Fine della parola
+        }
+        else if (ch == ' ' || ch == '\t' || ch == '\n')
+        {
+            statoParola = 0; // Fine della parola
         }
     }
 
     // Considera l'ultima riga se non finisce con un '\n'
-    if (ch != '\n' && numCaratteri != 0) {
+    if (ch != '\n' && numCaratteri != 0)
+    {
         numRighe++;
     }
 

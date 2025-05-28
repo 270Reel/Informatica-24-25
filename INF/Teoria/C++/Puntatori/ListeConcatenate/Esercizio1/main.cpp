@@ -31,10 +31,10 @@ int main()
     lista.VisualizzaLista();
     std::cout << "[La lista e' formata da: " << lista.ConteggioNodi() << " nodi]" << std::endl;
 
-    std::cout<<"Nodi duplicati eliminati(se presenti)"<<std::endl;
+    std::cout << "Nodi duplicati eliminati(se presenti)" << std::endl;
     lista.RimuoviDuplicati();
     lista.VisualizzaLista();
-    
+
     std::cout << "Inserisci il valore da eliminare:" << "\t";
     int nodoDaEliminare;
     std::cin >> nodoDaEliminare;
@@ -50,9 +50,13 @@ int main()
         lista.VisualizzaLista();
     }
 
-    std::cout<<"Inserisci il nodo da cercare:"<<"\t";
-    int nodoDaCercare; std::cin>>nodoDaCercare;
-    if(lista.RicercaNodo(nodoDaCercare)){std::cout<<"Elemento della lista trovato!";}
-    
+    std::cout << "Inserisci il nodo da cercare:" << "\t";
+    int nodoDaCercare;
+    std::cin >> nodoDaCercare;
+    if (lista.RicercaNodo(nodoDaCercare))
+    {
+        std::cout << "Elemento della lista trovato!";
+    }
+
     return 0;
 }

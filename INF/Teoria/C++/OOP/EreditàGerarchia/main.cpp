@@ -1,7 +1,8 @@
 #include <iostream>
 #include "Rombo.h"
 
-int main() {
+int main()
+{
 
     return 0;
 }

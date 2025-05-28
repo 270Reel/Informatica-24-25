@@ -4,7 +4,8 @@
 #include "Quadrilatero.h"
 #include <cmath>
 
-class Quadrato : public Quadrilatero {
+class Quadrato : public Quadrilatero
+{
 public:
     // Costruttore che chiama la superclasse
     Quadrato(double lato);

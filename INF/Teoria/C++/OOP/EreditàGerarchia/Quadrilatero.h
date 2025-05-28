@@ -3,7 +3,8 @@
 
 #include <iostream>
 
-class Quadrilatero {
+class Quadrilatero
+{
 protected:
     double lato1, lato2, lato3, lato4;
 
